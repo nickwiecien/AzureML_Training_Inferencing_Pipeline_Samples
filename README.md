@@ -8,6 +8,8 @@ The batch inferencing pipeline `(./BatchInferencingPipeline/AML_CreateBatchInfer
 
 For demonstration purposes, we leverage the [Iris Setosa dataset from Scikit-Learn](https://scikit-learn.org/stable/auto_examples/datasets/plot_iris_dataset.html) to train a basic classification model and make predictions. We have included code in the notebooks described above to automatically load this dataset into your default AML datastore so it can be consumed by the sample pipelines.
 
+![Azure ML Pipeline Samples](img/AML_Pipelines.png?raw=true "Azure ML Pipeline Samples")
+
 ## Environment Setup
 <b>Note:</b> Recommend running these notebooks on an Azure Machine Learning Compute Instance using the preconfigured `Python 3.6 - AzureML` environment.
 
