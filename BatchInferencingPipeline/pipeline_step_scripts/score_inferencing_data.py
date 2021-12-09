@@ -9,6 +9,7 @@ import pandas as pd
 import os
 import argparse
 import joblib
+import numpy as np
 
 # Parse input arguments
 parser = argparse.ArgumentParser("Score Inferencing Data")
@@ -30,14 +31,16 @@ ds = ws.get_default_datastore()
 
 # Get inferencing dataset
 inferencing_dataset = current_run.input_datasets['inferencing_data']
-inferencing_data_df = inferencing_dataset.to_pandas_dataframe()
+inferencing_data_df = inferencing_dataset.to_pandas_dataframe().astype(np.float64)
 
 # Get model from workspace - the code below will always retrieve the latest version of the model; specific versions can be targeted.
 Model(ws, name=model_name).download(target_dir='outputs', exist_ok=True)
 model = joblib.load('outputs/model_files/model.pkl')
+scaler = joblib.load('outputs/model_files/scaler.pkl')
 
 # Make predictions with new dataframe
-predictions = model.predict(inferencing_data_df)
+scaled_data_df = scaler.transform(inferencing_data_df)
+predictions = model.predict(scaled_data_df)
 inferencing_data_df['predictions']=predictions
 
 # Save scored dataset
