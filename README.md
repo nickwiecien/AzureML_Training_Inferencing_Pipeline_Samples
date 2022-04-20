@@ -11,7 +11,7 @@ For demonstration purposes, we leverage the [Iris Setosa dataset from Scikit-Lea
 ![Azure ML Pipeline Samples](img/AML_Pipelines.png?raw=true "Azure ML Pipeline Samples")
 
 ## Environment Setup
-<b>Note:</b> Recommend running these notebooks on an Azure Machine Learning Compute Instance using the preconfigured `Python 3.6 - AzureML` environment.
+<b>Note:</b> Recommend running these notebooks on an Azure Machine Learning Compute Instance using the preconfigured `Python 3.8 - AzureML` environment.
 
 To build and run the sample pipelines contained in `./ModelTrainingPipeline` and `./BatchInferencingPipeline` the following resources are required:
 * Azure Machine Learning Workspace
